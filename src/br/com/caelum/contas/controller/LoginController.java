@@ -26,4 +26,10 @@ public class LoginController {
 	    // ele errou a senha, voltou para o formulario
 	    return "redirect:loginForm";
 	  }
+	  
+	  @RequestMapping("logout")
+	  public String logout(HttpSession session) {
+	    session.invalidate();
+	    return "redirect:loginForm";
+	  }
 }
